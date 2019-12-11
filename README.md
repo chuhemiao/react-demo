@@ -51,6 +51,7 @@
 ### setState更新是同步还是异步
 + 会引起视图的重绘
 + 在可控的情况下是异步 在非可控的情况下是同步
++ 合并所有的异步执行  然后异步执行完毕之后才会执行异步回调函数
 
 ###　条件渲染
 
@@ -175,3 +176,34 @@
 ### 错误处理
 
 + 生命周期函数 componentDidMount(error,errorInfo)  子元素发生错误时触发
+
+
+### hook
+
++ hook 文档 https://zh-hans.reactjs.org/docs/hooks-intro.html
+
++ Hook 是什么？ Hook 是一个特殊的函数，它可以让你“钩入” React 的特性。例如，useState 是允许你在 React 函数组件中添加 state 的 Hook。
+
++ 什么时候我会用 Hook？ 如果你在编写函数组件并意识到需要向其添加一些 state，以前的做法是必须将其它转化为 class。
+
++ 不编写 class 的情况下使用 state 以及其他的 React 特性。
+
++ useState 会返回一对值：当前状态和一个让你更新它的函数，你可以在事件处理函数中或其他一些地方调用这个函数。
++ useState 唯一的参数就是初始 state。
+
++ // 声明多个 state 变量！
+
+```
+
+const [age, setAge] = useState(42);
+const [fruit, setFruit] = useState('banana');
+const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
+
+```
++ useEffect 就是一个 Effect Hook，给函数组件增加了操作副作用的能力。它跟 class 组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 具有相同的用途，只不过被合并成了一个 API。
+
++ Hook 本质就是 JavaScript 函数，但是在使用它时需要遵循两条规则。
+    - 只在最顶层使用 Hook,不要在循环，条件或嵌套函数中调用 Hook
+    - 只在 React 函数中调用 Hook,不要在普通的 JavaScript 函数中调用 Hook。
+
+

@@ -19,6 +19,7 @@ import Mine from './pages/Mine';
 import Book from './Book';
 import JavaBook from './JavaBook';
 import WebBook from './WebBook';
+import Hook from './hook';
 import { HashRouter as Router,Route } from 'react-router-dom';
 
 
@@ -82,6 +83,7 @@ class App extends React.Component{
 
                 </Router>
 
+                <Hook />
 
                 
             </div>
